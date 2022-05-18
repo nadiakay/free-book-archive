@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: CharisSILW;
+  src: url(/fonts/CharisSIL-Regular.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: CharisSILW;
+  font-weight: bold;
+  src: url(/fonts/CharisSIL-Bold.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: CharisSILW;
+  font-style: italic;
+  src: url(/fonts/CharisSIL-Italic.woff2) format("woff2");
+}
