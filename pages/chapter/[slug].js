@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
-import Header from "../../components/Header";
 import Layout from "../../components/Layout";
+import ChapterHeader from "../../components/ChapterHeader";
 import ChapterBody from "../../components/ChapterBody";
 import { getChapterBySlug, getAllChapters } from "../../lib/api";
 import Head from "next/head";
@@ -14,7 +14,6 @@ export default function Chapter({ chapter }) {
   }
   return (
     <Layout>
-      <Header />
       {router.isFallback ? (
         <title>{"Loading…"}</title>
       ) : (
@@ -23,6 +22,11 @@ export default function Chapter({ chapter }) {
             <Head>
               <title>{chapter.title}</title>
             </Head>
+            <ChapterHeader
+              book={chapter.book}
+              part={chapter.part}
+              title={chapter.title}
+            />
             <ChapterBody content={chapter.content} />
           </article>
         </>
@@ -35,6 +39,7 @@ export async function getStaticProps({ params }) {
   const chapter = getChapterBySlug(params.slug, [
     "title",
     "book",
+    "part",
     "slug",
     "author",
     "content",

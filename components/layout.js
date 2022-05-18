@@ -1,3 +1,4 @@
+import Header from "./Header";
 import Footer from "./Footer";
 import Meta from "./Meta";
 
@@ -6,7 +7,8 @@ export default function Layout({ preview, children }) {
     <>
       <Meta />
       <div className="min-h-screen">
-        <main>{children}</main>
+        <Header />
+        <main className="mx-auto md:max-w-6xl md:mt-5">{children}</main>
       </div>
       <Footer />
     </>
