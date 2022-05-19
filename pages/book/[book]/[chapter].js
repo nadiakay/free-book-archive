@@ -10,7 +10,7 @@ import markdownToHtml from "../../../lib/markdownToHtml";
 import { getAllBooks } from "../../../lib/api/books";
 
 export async function getStaticProps({ params }) {
-  const chapter = getChapterBySlug(params.slug, [
+  const chapter = getChapterBySlug(params.book.slug, params.slug, [
     "title",
     "book",
     "content",
@@ -33,7 +33,6 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const books = getAllBooks(["slug"]);
   const chapters = getAllChapters(["slug"]);
   console.log("chapters:", chapters);
 
@@ -41,7 +40,7 @@ export async function getStaticPaths() {
     paths: chapters.map(chapter => {
       return {
         params: {
-          book: chapter.book,
+          bookSlug: chapter.book,
           chapter: chapter.slug
         }
       };
@@ -50,7 +49,7 @@ export async function getStaticPaths() {
   };
 }
 
-export default function Chapter({ chapter, subjects }) {
+export default function Chapter({ bookSlug, chapter, subjects }) {
   const router = useRouter();
   if (!router.isFallback && !chapter?.slug) {
     return <ErrorPage statusCode={404} />;

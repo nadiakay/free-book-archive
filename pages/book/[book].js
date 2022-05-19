@@ -3,19 +3,25 @@ import ErrorPage from "next/error";
 import Layout from "../../components/layout";
 import Head from "next/head";
 import Link from "next/link";
-import {
-  getAllBooks,
-  getBookBySlug,
-  getChapterSlugs
-} from "../../lib/api/books";
+import { getAllBooks, getBookBySlug } from "../../lib/api/books";
 import { getAllSubjects } from "../../lib/api/subjects";
+import {
+  getChapterBySlug,
+  getChapterSlugsByBook
+} from "../../lib/api/chapters";
 
 export async function getStaticProps({ params }) {
-  const book = getBookBySlug(params.book, ["title", "author", "slug"]);
-  const chapters = getChapterSlugs(book);
+  const book = getBookBySlug(params.book, [
+    "title",
+    "author",
+    "subject",
+    "slug"
+  ]);
+  const chapters = getChapterSlugsByBook(book).map(slug =>
+    getChapterBySlug(params.book, slug, ["title", "slug"])
+  );
   const subjects = getAllSubjects();
-  console.log(book);
-  console.log("chapterslugs:", chapters);
+  console.log("chapters:", chapters);
 
   return {
     props: {
@@ -55,17 +61,22 @@ export default function Book({ book, chapters, subjects }) {
         <title>{"Loading…"}</title>
       ) : (
         <>
-          <article className="mb-32 px-2 font-serif">
+          <article className="mb-32 px-4 font-serif">
             <Head>
               <title>{book.title}</title>
             </Head>
-            <h1 className="flex flex-row mt-4 mb-2 text-2xl">{book.title}</h1>
-            <h3 className="border-b border-slate-400 mb-4">{book.author}</h3>
+            <h1 className="flex flex-row mt-5 mb-4 text-2xl">{book.title}</h1>
+            <h4 className="text-md mb-2 pl-2">Author: {book.author}</h4>
+            <h4 className="border-b border-slate-400 mb-4 pb-2 pl-2">
+              Subject: {book.subject}
+            </h4>
             <ul className="space-y-3">
               {chapters.map((chapter, i) => (
                 <li key={i}>
-                  <Link href={`/book/${book.slug}/${chapter}`}>
-                    <a className="hover:underline">{i}</a>
+                  <Link href={`/book/${book.slug}/${chapter.slug}`}>
+                    <a className="hover:underline">
+                      {i + 1}. {chapter.title}
+                    </a>
                   </Link>
                 </li>
               ))}
