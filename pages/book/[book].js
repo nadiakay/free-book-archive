@@ -21,7 +21,6 @@ export async function getStaticProps({ params }) {
     getChapterBySlug(params.book, slug, ["title", "slug"])
   );
   const subjects = getAllSubjects();
-  console.log("chapters:", chapters);
 
   return {
     props: {
@@ -34,11 +33,9 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   const books = getAllBooks(["slug"]);
-  console.log("books:", books);
 
   return {
     paths: books.map(book => {
-      console.log("book.slug:", book.slug);
       return {
         params: {
           book: book.slug

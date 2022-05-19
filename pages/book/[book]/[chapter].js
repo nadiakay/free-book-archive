@@ -17,11 +17,9 @@ export async function getStaticProps({ params }) {
     "slug",
     "author"
   ]);
-  console.log("chapter:", chapter);
   const content = await markdownToHtml(chapter.content || "");
   const subjects = getAllSubjects();
   const book = getBookBySlug(params.book, ["title", "slug"]);
-  console.log(" book", book);
 
   return {
     props: {
@@ -37,7 +35,6 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   const chapters = getAllChapters(["slug", "book"]);
-  console.log("chapters:", chapters);
 
   return {
     paths: chapters.map(chapter => {
