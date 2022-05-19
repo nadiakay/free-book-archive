@@ -17,7 +17,7 @@ export async function getStaticProps({ params }) {
     "subject",
     "slug"
   ]);
-  const chapters = getChapterSlugsByBook(book).map(slug =>
+  const chapters = getChapterSlugsByBook(book.slug).map(slug =>
     getChapterBySlug(params.book, slug, ["title", "slug"])
   );
   const subjects = getAllSubjects();

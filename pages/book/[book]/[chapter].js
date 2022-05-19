@@ -7,10 +7,10 @@ import { getChapterBySlug, getAllChapters } from "../../../lib/api/chapters";
 import { getAllSubjects } from "../../../lib/api/subjects";
 import Head from "next/head";
 import markdownToHtml from "../../../lib/markdownToHtml";
-import { getAllBooks } from "../../../lib/api/books";
+import { getBookBySlug } from "../../../lib/api/books";
 
 export async function getStaticProps({ params }) {
-  const chapter = getChapterBySlug(params.book.slug, params.slug, [
+  const chapter = getChapterBySlug(params.book, params.chapter, [
     "title",
     "book",
     "content",
@@ -20,9 +20,12 @@ export async function getStaticProps({ params }) {
   console.log("chapter:", chapter);
   const content = await markdownToHtml(chapter.content || "");
   const subjects = getAllSubjects();
+  const book = getBookBySlug(params.book, ["title", "slug"]);
+  console.log(" book", book);
 
   return {
     props: {
+      book: book,
       chapter: {
         ...chapter,
         content
@@ -33,14 +36,14 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const chapters = getAllChapters(["slug"]);
+  const chapters = getAllChapters(["slug", "book"]);
   console.log("chapters:", chapters);
 
   return {
     paths: chapters.map(chapter => {
       return {
         params: {
-          bookSlug: chapter.book,
+          book: chapter.book,
           chapter: chapter.slug
         }
       };
@@ -49,7 +52,7 @@ export async function getStaticPaths() {
   };
 }
 
-export default function Chapter({ bookSlug, chapter, subjects }) {
+export default function Chapter({ book, chapter, subjects }) {
   const router = useRouter();
   if (!router.isFallback && !chapter?.slug) {
     return <ErrorPage statusCode={404} />;
@@ -64,11 +67,7 @@ export default function Chapter({ bookSlug, chapter, subjects }) {
             <Head>
               <title>{chapter.title}</title>
             </Head>
-            <ChapterHeader
-              book={chapter.book}
-              part={chapter.part}
-              title={chapter.title}
-            />
+            <ChapterHeader book={book} chapter={chapter} />
             <ChapterBody content={chapter.content} />
           </article>
         </>
