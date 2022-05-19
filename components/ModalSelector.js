@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import cn from "classnames";
+import { join } from "path";
 import modal from "./modal.module.css";
 
-export default function SubjectSelector() {
+export default function ModalSelector({ items, title, path }) {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
@@ -21,7 +22,7 @@ export default function SubjectSelector() {
           console.log("modalVisible:", modalVisible);
         }}
       >
-        <span>Subjects</span>
+        <span>{title}</span>
         <svg
           className="mr-1 ml-2 h-5 w-5"
           xmlns="http://www.w3.org/2000/svg"
@@ -38,11 +39,14 @@ export default function SubjectSelector() {
       <ul
         className={cn(
           { [modal.hidden]: !modalVisible },
-          "border border-slate-400 rounded-md absolute mt-2 right-0 left-0 space-y-3 p-3 bg-white"
+          "border border-slate-400 rounded-md absolute mt-2 space-y-2 p-3 bg-white"
         )}
       >
-        <li>Science</li>
-        <li>Math</li>
+        {items.map((item, i) => (
+          <li key={i}>
+            <Link href={`/${path}/${item}`}>{item}</Link>
+          </li>
+        ))}
       </ul>
     </div>
   );

@@ -7,34 +7,6 @@ import { getChapterBySlug, getAllChapters } from "../../lib/api";
 import Head from "next/head";
 import markdownToHtml from "../../lib/markdownToHtml";
 
-export default function Chapter({ chapter }) {
-  const router = useRouter();
-  if (!router.isFallback && !chapter?.slug) {
-    return <ErrorPage statusCode={404} />;
-  }
-  return (
-    <Layout>
-      {router.isFallback ? (
-        <title>{"Loading…"}</title>
-      ) : (
-        <>
-          <article className="mb-32">
-            <Head>
-              <title>{chapter.title}</title>
-            </Head>
-            <ChapterHeader
-              book={chapter.book}
-              part={chapter.part}
-              title={chapter.title}
-            />
-            <ChapterBody content={chapter.content} />
-          </article>
-        </>
-      )}
-    </Layout>
-  );
-}
-
 export async function getStaticProps({ params }) {
   const chapter = getChapterBySlug(params.slug, [
     "title",
@@ -70,4 +42,32 @@ export async function getStaticPaths() {
     }),
     fallback: false
   };
+}
+
+export default function Chapter({ chapter }) {
+  const router = useRouter();
+  if (!router.isFallback && !chapter?.slug) {
+    return <ErrorPage statusCode={404} />;
+  }
+  return (
+    <Layout>
+      {router.isFallback ? (
+        <title>{"Loading…"}</title>
+      ) : (
+        <>
+          <article className="mb-32">
+            <Head>
+              <title>{chapter.title}</title>
+            </Head>
+            <ChapterHeader
+              book={chapter.book}
+              part={chapter.part}
+              title={chapter.title}
+            />
+            <ChapterBody content={chapter.content} />
+          </article>
+        </>
+      )}
+    </Layout>
+  );
 }

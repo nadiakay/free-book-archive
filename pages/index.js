@@ -1,8 +1,20 @@
 import Layout from "../components/layout";
-import { getAllPosts } from "../lib/api";
+import { getAllBooks } from "../lib/api/books";
 import Head from "next/head";
 
-export default function Index({ previewBooks }) {
+export async function getStaticProps() {
+  const books = getAllBooks(["title"]);
+
+  return {
+    props: {
+      books: books
+    }
+  };
+}
+
+export default function Index({ books }) {
+  console.log(books);
+
   return (
     <>
       <Layout>
@@ -13,12 +25,4 @@ export default function Index({ previewBooks }) {
       </Layout>
     </>
   );
-}
-
-export async function getStaticProps() {
-  // const previewBooks = getBooks([fields]).slice(0, 5);
-
-  return {
-    props: {}
-  };
 }
