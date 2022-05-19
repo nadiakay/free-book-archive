@@ -5,7 +5,7 @@ import Searchbar from "./Searchbar";
 
 export default function Nav({ subjects }) {
   return (
-    <ul className="font-sans font-normal text-xl flex flex-col md:flex-row items-center w-fit space-y-2 mx-auto md:mx-0 md:space-y-0 md:space-x-2">
+    <ul className="font-sans font-normal text-xl flex flex-col md:flex-row items-center w-fit space-y-2 mx-auto md:mx-0 md:space-y-0 md:space-x-4">
       <li
         className="text-center px-2
         "

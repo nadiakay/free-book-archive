@@ -24,7 +24,7 @@ export default function ModalSelector({ items, title, path }) {
       >
         <span>{title}</span>
         <svg
-          className="mr-1 ml-2 h-5 w-5"
+          className="ml-2 h-5 w-5"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
           fill="currentColor"
@@ -39,7 +39,7 @@ export default function ModalSelector({ items, title, path }) {
       <ul
         className={cn(
           { [modal.hidden]: !modalVisible },
-          "border border-slate-400 rounded-md absolute mt-2 space-y-2 p-3 bg-white"
+          "border border-slate-400 rounded-md absolute mt-2 space-y-2 p-4 bg-white"
         )}
       >
         {items.map((item, i) => (

@@ -57,15 +57,15 @@ export default function Book({ book, chapters, subjects }) {
         <>
           <article className="mb-32 px-2 font-serif">
             <Head>
-              <title>``</title>
+              <title>{book.title}</title>
             </Head>
             <h1 className="flex flex-row mt-4 mb-2 text-2xl">{book.title}</h1>
-            <h3 className="border-b border-slate-400 ">{book.author}</h3>
+            <h3 className="border-b border-slate-400 mb-4">{book.author}</h3>
             <ul className="space-y-3">
               {chapters.map((chapter, i) => (
                 <li key={i}>
-                  <Link href={`/${book.slug}/${chapter}`}>
-                    <span>{i}</span>
+                  <Link href={`/book/${book.slug}/${chapter}`}>
+                    <a className="hover:underline">{i}</a>
                   </Link>
                 </li>
               ))}
