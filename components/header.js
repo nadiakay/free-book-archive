@@ -1,9 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import Nav from "./Nav";
 import logo from "../public/assets/logo.png";
 
-export default function Header() {
+export default function Header({ children }) {
   return (
     <h2
       className="bg-accent-1 border-b
@@ -23,7 +22,7 @@ export default function Header() {
           <span className="pl-1">Free Book Archive</span>
         </a>
       </Link>
-      <Nav />
+      {children}
     </h2>
   );
 }

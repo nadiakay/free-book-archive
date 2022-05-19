@@ -3,7 +3,8 @@ import ErrorPage from "next/error";
 import Layout from "../../components/layout";
 import ChapterHeader from "../../components/ChapterHeader";
 import ChapterBody from "../../components/ChapterBody";
-import { getChapterBySlug, getAllChapters } from "../../lib/api";
+import { getChapterBySlug, getAllChapters } from "../../lib/api/chapters";
+import { getAllSubjects } from "../../lib/api/subjects";
 import Head from "next/head";
 import markdownToHtml from "../../lib/markdownToHtml";
 
@@ -18,13 +19,15 @@ export async function getStaticProps({ params }) {
     "coverImage"
   ]);
   const content = await markdownToHtml(chapter.content || "");
+  const subjects = getAllSubjects();
 
   return {
     props: {
       chapter: {
         ...chapter,
         content
-      }
+      },
+      subjects: subjects
     }
   };
 }
@@ -44,13 +47,13 @@ export async function getStaticPaths() {
   };
 }
 
-export default function Chapter({ chapter }) {
+export default function Chapter({ chapter, subjects }) {
   const router = useRouter();
   if (!router.isFallback && !chapter?.slug) {
     return <ErrorPage statusCode={404} />;
   }
   return (
-    <Layout>
+    <Layout subjects={subjects}>
       {router.isFallback ? (
         <title>{"Loading…"}</title>
       ) : (

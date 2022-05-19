@@ -2,33 +2,40 @@ import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import Layout from "../../components/layout";
 import Head from "next/head";
-import BookPreview from "../../components/BookPreview";
-//import subjects from "../../data/subjects.json";
-import { getBooksBySubject } from "../../lib/api/books";
+import Link from "next/link";
+import {
+  getAllBooks,
+  getBookBySlug,
+  getChapterSlugs
+} from "../../lib/api/books";
 import { getAllSubjects } from "../../lib/api/subjects";
 
 export async function getStaticProps({ params }) {
-  const subject = params.subject;
-  const books = getBooksBySubject(params.subject);
+  const book = getBookBySlug(params.book, ["title", "author", "slug"]);
+  const chapters = getChapterSlugs(book);
   const subjects = getAllSubjects();
+  console.log(book);
+  console.log("chapterslugs:", chapters);
 
   return {
     props: {
-      subject: subject,
-      books: books,
+      book: book,
+      chapters: chapters,
       subjects: subjects
     }
   };
 }
 
 export async function getStaticPaths() {
-  const subjects = getAllSubjects();
+  const books = getAllBooks(["slug"]);
+  console.log("books:", books);
 
   return {
-    paths: subjects.map(subject => {
+    paths: books.map(book => {
+      console.log("book.slug:", book.slug);
       return {
         params: {
-          subject: subject
+          book: book.slug
         }
       };
     }),
@@ -36,7 +43,7 @@ export async function getStaticPaths() {
   };
 }
 
-export default function Subject({ subject, books, subjects }) {
+export default function Book({ book, chapters, subjects }) {
   const router = useRouter();
   if (!router.isFallback && false) {
     return <ErrorPage statusCode={404} />;
@@ -50,15 +57,16 @@ export default function Subject({ subject, books, subjects }) {
         <>
           <article className="mb-32 px-2 font-serif">
             <Head>
-              <title>`{subject} Books`</title>
+              <title>``</title>
             </Head>
-            <h1 className="flex flex-row border-b border-slate-400 my-4 text-2xl">
-              {subject} Books
-            </h1>
+            <h1 className="flex flex-row mt-4 mb-2 text-2xl">{book.title}</h1>
+            <h3 className="border-b border-slate-400 ">{book.author}</h3>
             <ul className="space-y-3">
-              {books.map((book, i) => (
+              {chapters.map((chapter, i) => (
                 <li key={i}>
-                  <BookPreview book={book} />
+                  <Link href={`/${book.slug}/${chapter}`}>
+                    <span>{i}</span>
+                  </Link>
                 </li>
               ))}
             </ul>
