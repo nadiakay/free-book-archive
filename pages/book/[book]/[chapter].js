@@ -60,13 +60,13 @@ export default function Chapter({ book, chapter, subjects }) {
         <title>{"Loading…"}</title>
       ) : (
         <>
-          <article className="mb-32">
-            <Head>
-              <title>{chapter.title}</title>
-            </Head>
+          <Head>
+            <title>{chapter.title}</title>
+          </Head>
+          <section className="max-w-4xl mx-auto mt-4 font-serif">
             <ChapterHeader book={book} chapter={chapter} />
             <ChapterBody content={chapter.content} />
-          </article>
+          </section>
         </>
       )}
     </Layout>

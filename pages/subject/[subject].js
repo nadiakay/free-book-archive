@@ -48,7 +48,7 @@ export default function Subject({ subject, books, subjects }) {
         <title>{"Loading…"}</title>
       ) : (
         <>
-          <article className="mb-32 px-2 font-serif">
+          <section className="max-w-4xl mx-auto mb-32 font-serif">
             <Head>
               <title>{subject} Books</title>
             </Head>
@@ -62,7 +62,7 @@ export default function Subject({ subject, books, subjects }) {
                 </li>
               ))}
             </ul>
-          </article>
+          </section>
         </>
       )}
     </Layout>

@@ -58,11 +58,11 @@ export default function Book({ book, chapters, subjects }) {
         <title>{"Loading…"}</title>
       ) : (
         <>
-          <article className="mb-32 px-2 font-serif">
+          <section className="max-w-4xl mx-auto mb-32 font-serif">
             <Head>
               <title>{book.title}</title>
             </Head>
-            <h1 className="border-b border-slate-400 mt-5 mb-4 text-2xl">
+            <h1 className="text-2xl font-bold border-b border-slate-400 mt-5 mb-4 ">
               {book.title}
             </h1>
             <h4 className="text-lg mb-2 pl-2 ">Author: {book.author}</h4>
@@ -79,7 +79,7 @@ export default function Book({ book, chapters, subjects }) {
                 </li>
               ))}
             </ul>
-          </article>
+          </section>
         </>
       )}
     </Layout>

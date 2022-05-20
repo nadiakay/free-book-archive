@@ -17,24 +17,22 @@ export async function getStaticProps() {
 }
 
 export default function Index({ books, subjects }) {
-  console.log(books);
-
   return (
     <>
+      <Head>
+        <title>Free Book Archive</title>
+      </Head>
       <Layout subjects={subjects}>
-        <Head>
-          <title>Free Book Archive: Home</title>
-        </Head>
-        <article className="max-w-4xl mx-2 mt-4 font-serif">
-          <h1 className="font-bold text-lg mb-3">
+        <section className="max-w-4xl mx-auto mb-32 font-serif">
+          <h1 className="text-2xl border-b border-slate-400 mb-3">
             Welcome to the Free Book Archive!
           </h1>
-          <p className="mx-4 mb-4">
+          <p className="mx-4 my-4">
             Our collection of ebooks is freely available in web accessible
             format suited for desktop or mobile devices. All texts are public
             domain or licensed for redistribution as noted.
           </p>
-          <h2 className="font-bold text-lg mb-2">Browse Subjects:</h2>
+          <h2 className="font-bold text-xl mb-2">Browse by Subject:</h2>
           <ul className="text-lg space-y-2 mx-4">
             {subjects.map((subject, i) => (
               <li key={i}>
@@ -44,7 +42,7 @@ export default function Index({ books, subjects }) {
               </li>
             ))}
           </ul>
-        </article>
+        </section>
       </Layout>
     </>
   );

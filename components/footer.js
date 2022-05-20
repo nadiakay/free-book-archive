@@ -1,25 +1,18 @@
+import Link from "next/link";
 import { EXAMPLE_PATH } from "../lib/constants";
 
 export default function Footer() {
   return (
-    <footer className="bg-accent-1 border-t border-accent-2">
-      <div className="py-28 flex flex-col lg:flex-row items-center max-w-2xl mx-auto">
-        <h3 className="text-4xl lg:text-5xl font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
+    <footer className="font-serif bg-accent-2 border-t border-slate-400 mt-20">
+      <div className="py-12 flex flex-col lg:flex-row items-center max-w-2xl mx-auto">
+        <h3 className="text-4xl lg:text-5xl font-bold tracking-tighter leading-tight text-center lg:text-left mb-8 lg:mb-0 lg:pr-4 lg:w-1/2">
           Free Book Archive
         </h3>
-        <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
-          <a
-            href="https://nextjs.org/docs/basic-features/pages"
-            className="mx-3 bg-black hover:bg-white hover:text-black border border-black text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0"
-          >
-            Read Documentation
-          </a>
-          <a
-            href={`https://github.com/vercel/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
-            className="mx-3 font-bold hover:underline"
-          >
-            View on GitHub
-          </a>
+        <div className="flex flex-col justify-center items-start space-y-2 lg:pl-4 lg:w-1/2">
+          <Link href="https://nadiakonieczny.com">Site by Nadia.</Link>
+          <Link href={`https://github.com/nadiakay/free-book-archive`}>
+            <a className="hover:underline">Source code (GitHub)</a>
+          </Link>
         </div>
       </div>
     </footer>

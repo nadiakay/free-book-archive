@@ -7,11 +7,11 @@ export default function Layout({ subjects, children }) {
   return (
     <>
       <Meta />
-      <div className="min-h-screen">
+      <div className="">
         <Header>
           <Nav subjects={subjects} />
         </Header>
-        <main className="mx-auto md:max-w-6xl md:mt-5">{children}</main>
+        <main className="mx-2 mt-5">{children}</main>
       </div>
       <Footer />
     </>
