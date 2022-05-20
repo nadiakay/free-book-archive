@@ -3,7 +3,7 @@ import ErrorPage from "next/error";
 import Layout from "../../components/layout";
 import Head from "next/head";
 import BookPreview from "../../components/BookPreview";
-//import subjects from "../../data/subjects.json";
+import subjects from "../../data/subjects.json";
 import { getBooksBySubject } from "../../lib/api/books";
 import { getAllSubjects } from "../../lib/api/subjects";
 
@@ -50,12 +50,12 @@ export default function Subject({ subject, books, subjects }) {
         <>
           <article className="mb-32 px-2 font-serif">
             <Head>
-              <title>`{subject} Books`</title>
+              <title>{subject} Books</title>
             </Head>
             <h1 className="flex flex-row border-b border-slate-400 my-4 text-2xl">
               {subject} Books
             </h1>
-            <ul className="space-y-3">
+            <ul className="text-lg space-y-3 mx-4">
               {books.map((book, i) => (
                 <li key={i}>
                   <BookPreview book={book} />

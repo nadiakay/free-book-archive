@@ -58,16 +58,17 @@ export default function Book({ book, chapters, subjects }) {
         <title>{"Loading…"}</title>
       ) : (
         <>
-          <article className="mb-32 px-4 font-serif">
+          <article className="mb-32 px-2 font-serif">
             <Head>
               <title>{book.title}</title>
             </Head>
-            <h1 className="flex flex-row mt-5 mb-4 text-2xl">{book.title}</h1>
-            <h4 className="text-md mb-2 pl-2">Author: {book.author}</h4>
-            <h4 className="border-b border-slate-400 mb-4 pb-2 pl-2">
-              Subject: {book.subject}
-            </h4>
-            <ul className="space-y-3">
+            <h1 className="border-b border-slate-400 mt-5 mb-4 text-2xl">
+              {book.title}
+            </h1>
+            <h4 className="text-lg mb-2 pl-2 ">Author: {book.author}</h4>
+            <h4 className="text-lg mb-4 pb-2 pl-2">Subject: {book.subject}</h4>
+            <h4 className="text-lg pb-4">Contents</h4>
+            <ul className="space-y-3 mx-4">
               {chapters.map((chapter, i) => (
                 <li key={i}>
                   <Link href={`/book/${book.slug}/${chapter.slug}`}>
