@@ -1,24 +1,23 @@
 import Link from "next/link";
 import Image from "next/image";
-import logo from "../public/assets/logo.png";
+import Logo from "./logo";
 
 export default function Header({ children }) {
   return (
     <h2
       className="bg-accent-1 border-b
-   border-accent-2 flex flex-col md:flex-row justify-between text-2xl md:text-4xl font-bold font-serif p-4 pb-5"
+   border-accent-2 relative flex flex-col md:flex-row space-between text-2xl md:text-4xl font-bold font-serif p-4 pb-5 mb-8"
     >
-      <Link href="/" className="">
-        <a className="flex flex-row items-center h-5 hover:underline mb-4 md:mb-0">
-          <img
-            src="/assets/logo.png"
-            alt="Logo"
-            className="h-auto w-auto max-h-6 max-w-5"
-          />
-          <span className="pl-1">Free Book Archive</span>
-        </a>
-      </Link>
-      {children}
+      <div className="flex items-center flex-1">
+        <Link href="/">
+          <a className="flex flex-row items-center hover:underline pb-4 md:pb-0">
+            <Logo />
+            <span className="pl-2">Free Book Archive</span>
+          </a>
+        </Link>
+      </div>
+
+      <div className="flex items-center flex-0">{children}</div>
     </h2>
   );
 }
