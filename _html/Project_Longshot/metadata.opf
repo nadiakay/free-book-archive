@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uuid_id" version="2.0">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+        <dc:identifier opf:scheme="calibre" id="calibre_id">7755c030-f26b-4a45-b8e0-3daefbd73f53</dc:identifier>
+        <dc:identifier opf:scheme="uuid" id="uuid_id">ed1cd474-0149-4d65-b09c-956afb694f55</dc:identifier>
+        <dc:title>Project Longshot: An Unmanned Probe to Alpha Centauri</dc:title>
+        <dc:creator opf:file-as="Unknown" opf:role="aut">Keith A. Beals, et al; NASA</dc:creator>
+        <dc:creator opf:file-as="Unknown" opf:role="aut">Universities Space Research Association</dc:creator>
+        <dc:contributor opf:file-as="calibre" opf:role="bkp">Wikisource</dc:contributor>
+        <dc:language>en</dc:language>
+        <meta content="{}" name="calibre:author_link_map"/>
+    </metadata>
+    <guide/>
+</package>
