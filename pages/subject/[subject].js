@@ -3,7 +3,6 @@ import ErrorPage from "next/error";
 import Layout from "../../components/layout";
 import Head from "next/head";
 import BookPreview from "../../components/BookPreview";
-import subjects from "../../data/subjects.json";
 import { getBooksBySubject } from "../../lib/api/books";
 import { getAllSubjects } from "../../lib/api/subjects";
 
