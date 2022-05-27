@@ -1,0 +1,16 @@
+{
+  "title": "A Dynamical Theory of the Electromagnetic Field",
+  "authors": ["James Clerk Maxwell"],
+  "subjects": ["Physics"],
+  "slug": "A_Dynamical_Theory_of_the_Electromagnetic_Field",
+  "chapters": [
+    { "title": null, "id": 0 },
+    { "title": "Part I", "id": 1 },
+    { "title": "Part II", "id": 2 },
+    { "title": "Part III", "id": 3 },
+    { "title": "Part IV", "id": 4 },
+    { "title": "Part V", "id": 5 },
+    { "title": "Part VI", "id": 6 },
+    { "title": "Part VII", "id": 7 }
+  ]
+}

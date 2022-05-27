@@ -1,0 +1,17 @@
+{
+  "title": "Project Longshot: An Unmanned Probe to Alpha Centauri",
+  "subjects": ["Space Travel"],
+  "authors": [
+    "Keith A. Beals, et al; NASA",
+    "Universities Space Research Association"
+  ],
+  "slug": "Project_Longshot",
+  "chapters": [
+    { "title": null, "id": 0 },
+    { "title": "1: Mission Model", "id": 1 },
+    { "title": "2: Mission Profile", "id": 2 },
+    { "title": "3: Spacecraft Systems", "id": 3 },
+    { "title": "4: Spacecraft Design", "id": 4 },
+    { "title": "Appendix", "id": 5 }
+  ]
+}

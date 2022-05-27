@@ -1,0 +1,21 @@
+{
+  "title": "Alice's Adventures in Wonderland",
+  "authors": ["Lewis Carroll"],
+  "subjects": ["Fiction"],
+  "slug": "Alice's_Adventures_in_Wonderland_(1866)",
+  "chapters": [
+    { "title": null, "id": 0 },
+    { "title": "DOWN THE RABBIT-HOLE", "id": 1 },
+    { "title": "THE POOL OF TEARS", "id": 2 },
+    { "title": "A CAUCUS-RACE AND A LONG TALE", "id": 3 },
+    { "title": "THE RABBIT SENDS IN A LITTLE BILL", "id": 4 },
+    { "title": "ADVICE FROM A CATERPILLAR", "id": 5 },
+    { "title": "PIG AND PEPPER", "id": 6 },
+    { "title": "A MAD TEA-PARTY", "id": 7 },
+    { "title": "THE QUEEN'S CROQUET-GROUND", "id": 8 },
+    { "title": "THE MOCK-TURTLE'S STORY", "id": 9 },
+    { "title": "THE LOBSTER QUADRILLE", "id": 10 },
+    { "title": "WHO STOLE THE TARTS?", "id": 11 },
+    { "title": "ALICE'S EVIDENCE", "id": 12 }
+  ]
+}

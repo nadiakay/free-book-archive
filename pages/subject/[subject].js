@@ -3,12 +3,17 @@ import ErrorPage from "next/error";
 import Layout from "../../components/layout";
 import Head from "next/head";
 import BookPreview from "../../components/BookPreview";
-import { getBooksBySubject } from "../../lib/api/books";
+import { getBooksBySubject } from "../../lib/api/book";
 import { getAllSubjects } from "../../lib/api/subjects";
 
 export async function getStaticProps({ params }) {
   const subject = params.subject;
-  const books = getBooksBySubject(params.subject);
+  const books = getBooksBySubject(params.subject, [
+    "title",
+    "slug",
+    "authors",
+    "subjects"
+  ]);
   const subjects = getAllSubjects();
 
   return {

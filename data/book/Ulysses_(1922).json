@@ -1,0 +1,27 @@
+{
+  "title": "Ulysses",
+  "authors": ["James Joyce"],
+  "subjects": ["Fiction"],
+  "slug": "Ulysses_(1922)",
+  "chapters": [
+    { "title": null, "id": 0 },
+    { "title": " Episode 1, Telemachus", "id": 1 },
+    { "title": " Episode 2, Nestor", "id": 2 },
+    { "title": " Episode 3, Proteus", "id": 3 },
+    { "title": " Episode 4, Calypso", "id": 4 },
+    { "title": " Episode 5, The Lotus Eaters", "id": 5 },
+    { "title": " Episode 6, Hades", "id": 6 },
+    { "title": " Episode 7, Aeolus", "id": 7 },
+    { "title": " Episode 8, The Lestrygonians", "id": 8 },
+    { "title": " Episode 9, Scylla and Charybdis", "id": 9 },
+    { "title": " Episode 10, The Wandering Rocks", "id": 10 },
+    { "title": " Episode 11, The Sirens", "id": 11 },
+    { "title": " Episode 12, The Cyclops", "id": 12 },
+    { "title": " Episode 13, Nausic\u00e4a", "id": 13 },
+    { "title": " Episode 14, The Oxen of the Sun", "id": 14 },
+    { "title": " Episode 15, Circe", "id": 15 },
+    { "title": " Episode 16, Eumaeus", "id": 16 },
+    { "title": " Episode 17, Ithaca", "id": 17 },
+    { "title": " Episode 18, Penelope", "id": 18 }
+  ]
+}
