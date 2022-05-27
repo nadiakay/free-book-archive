@@ -7,7 +7,7 @@ export default function BookPreview({ book }) {
       <Link href={`/book/${book.slug}`} className="pb-2">
         <a className="text-lg font-bold hover:underline ">{book.title}</a>
       </Link>
-      <p className="text-sm">{book.author}</p>
+      <p className="text-sm">{book.authors.join("; ")}</p>
     </div>
   );
 }

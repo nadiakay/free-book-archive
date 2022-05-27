@@ -1,5 +1,5 @@
 import Layout from "../components/layout";
-import { getAllBooks } from "../lib/api/books";
+import { getAllBooks } from "../lib/api/book";
 import { getAllSubjects } from "../lib/api/subjects";
 import Head from "next/head";
 import Link from "next/link";
