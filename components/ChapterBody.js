@@ -1,10 +1,10 @@
-import markdownStyles from "./markdown-styles.module.css";
+import bookStyles from "./book-styles.module.css";
 
-export default function ChapterBody({ content }) {
+export default function ChapterBody({ content, style }) {
   return (
     <div className="mx-4 ">
       <div
-        className={markdownStyles["markdown"]}
+        className={bookStyles["_" + style]}
         dangerouslySetInnerHTML={{ __html: content }}
       />
     </div>

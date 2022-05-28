@@ -1,22 +1,15 @@
 import { useRouter } from "next/router";
-import ErrorPage from "next/error";
 import Head from "next/head";
 import Layout from "../../../components/layout";
 
 import ChapterHeader from "../../../components/ChapterHeader";
 import ChapterBody from "../../../components/ChapterBody";
 
-import { getChapterBySlug, getAllChapters } from "../../../lib/api/chapter";
 import { getAllSubjects } from "../../../lib/api/subjects";
 import { getBookBySlug } from "../../../lib/api/book";
-
-import * as styles from "../../../styles/book";
+import { getChapterBySlug, getAllChapters } from "../../../lib/api/chapter";
 
 export async function getStaticProps({ params }) {
-  console.log("styles:", styles);
-  if (params.chapter.split(".").pop() == "html") {
-    console.log("params.chapter:", params.chapter);
-  }
   const chapter = getChapterBySlug(params.book, params.chapter, [
     "title",
     "book",
@@ -25,8 +18,7 @@ export async function getStaticProps({ params }) {
     "author"
   ]);
   const subjects = getAllSubjects();
-  const book = getBookBySlug(params.book, ["title", "slug"]);
-  //console.log("chapter:", chapter);
+  const book = getBookBySlug(params.book, ["title", "slug", "id"]);
 
   return {
     props: {
@@ -39,6 +31,7 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   const chapters = [
+    //get paths for both [slug] and [slug].html
     ...getAllChapters(["slug", "book"]),
     ...getAllChapters(["slug", "book"]).map(chapter => {
       let ch = {};
@@ -73,8 +66,8 @@ export default function Chapter({ book, chapter, subjects }) {
             <title>{chapter.title}</title>
           </Head>
           <section className="max-w-4xl mx-auto mt-4 font-serif">
-            <ChapterHeader book={book} chapter={chapter} />
-            <ChapterBody content={chapter.content} />
+            <ChapterHeader book={book} />
+            <ChapterBody content={chapter.content} style={book.id} />
           </section>
         </>
       )}
