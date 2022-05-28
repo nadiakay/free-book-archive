@@ -2,8 +2,13 @@ module.exports = {
   async redirects() {
     return [
       {
-        source: "/book2/:slug",
-        destination: "/book2/:slug/0",
+        source: "/book/:slug",
+        destination: "/book/:slug/0",
+        permanent: true
+      },
+      {
+        source: "/book/:slug/:path(/.html/)",
+        destination: "/book/:slug/:path",
         permanent: true
       }
     ];
