@@ -12,7 +12,7 @@ export default function Layout({ style, subjects, children }) {
         <Header>
           <Nav subjects={subjects} />
         </Header>
-        <main className="mx-2 mt-5">{children}</main>
+        <main className="mx-2 pb-8">{children}</main>
       </div>
       <Footer />
     </div>
