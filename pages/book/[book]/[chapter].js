@@ -57,7 +57,7 @@ export async function getStaticPaths() {
 export default function Chapter({ book, chapter, subjects }) {
   const router = useRouter();
   return (
-    <Layout style={"bg-slate-100"} subjects={subjects}>
+    <Layout subjects={subjects}>
       {router.isFallback ? (
         <title>{"Loading…"}</title>
       ) : (
@@ -65,10 +65,8 @@ export default function Chapter({ book, chapter, subjects }) {
           <Head>
             <title>{chapter.title}</title>
           </Head>
-          <section className="shadow-xl bg-white max-w-4xl mx-auto mt-4 font-serif">
-            <ChapterHeader book={book} />
-            <ChapterBody content={chapter.content} style={book.id} />
-          </section>
+          <ChapterHeader book={book} />
+          <ChapterBody content={chapter.content} style={book.id} />
         </>
       )}
     </Layout>

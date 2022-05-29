@@ -1,0 +1,25 @@
+{
+  "title": "Dubliners",
+  "subjects": ["Fiction"],
+  "authors": ["James Joyce"],
+  "slug": "Dubliners",
+  "chapters": [
+    { "title": "None", "id": 0 },
+    { "title": "The Sisters", "id": 1 },
+    { "title": "An Encounter", "id": 2 },
+    { "title": "Araby", "id": 3 },
+    { "title": "Eveline", "id": 4 },
+    { "title": "After the Race", "id": 5 },
+    { "title": "Two Gallants", "id": 6 },
+    { "title": "The Boarding House", "id": 7 },
+    { "title": "A Little Cloud", "id": 8 },
+    { "title": "Counterparts", "id": 9 },
+    { "title": "Clay", "id": 10 },
+    { "title": "A Painful Case", "id": 11 },
+    { "title": "Ivy Day in the Committee Room", "id": 12 },
+    { "title": "A Mother", "id": 13 },
+    { "title": "Grace", "id": 14 },
+    { "title": "The Dead", "id": 15 }
+  ],
+  "id": 6
+}

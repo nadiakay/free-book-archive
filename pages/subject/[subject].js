@@ -56,7 +56,7 @@ export default function Subject({ subject, books, subjects }) {
             <Head>
               <title>{subject} Books</title>
             </Head>
-            <h1 className="flex flex-row border-b border-slate-400 my-4 text-2xl">
+            <h1 className="flex flex-row border-b border-slate-400 mb-4 text-2xl">
               {subject} Books
             </h1>
             <ul className="text-lg space-y-3 mx-4">

@@ -1,0 +1,16 @@
+{
+  "title": "My \u00c1ntonia",
+  "subjects": ["Fiction"],
+  "authors": ["Willa Sibert Cather"],
+  "slug": "My_\u00c1ntonia",
+  "chapters": [
+    { "title": "None", "id": 0 },
+    { "title": "Introduction", "id": 1 },
+    { "title": "The Shimerdas", "id": 2 },
+    { "title": "The Hired Girls", "id": 3 },
+    { "title": "Lena Lingard", "id": 4 },
+    { "title": "The Pioneer Woman's Story", "id": 5 },
+    { "title": "Cuzak's Boys", "id": 6 }
+  ],
+  "id": 7
+}
