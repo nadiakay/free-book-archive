@@ -1,10 +1,9 @@
-import bookStyles from "./book-styles.module.css";
-
 export default function ChapterBody({ content, style }) {
+  console.log("style:", style);
   return (
     <div className="mx-4 ">
       <div
-        className={bookStyles["_" + style]}
+        className={"_" + style}
         dangerouslySetInnerHTML={{ __html: content }}
       />
     </div>

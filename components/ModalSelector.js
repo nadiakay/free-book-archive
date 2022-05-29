@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import cn from "classnames";
-import { join } from "path";
 import modal from "./modal.module.css";
 
 export default function ModalSelector({ items, title, path }) {
