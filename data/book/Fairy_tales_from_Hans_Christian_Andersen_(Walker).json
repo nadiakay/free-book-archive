@@ -1,0 +1,22 @@
+{
+  "title": "Fairy Tales from Hans Christian Andersen",
+  "authors": ["Hans Christian Andersen"],
+  "slug": "Fairy_tales_from_Hans_Christian_Andersen_(Walker)",
+  "chapters": [
+    { "title": "None", "id": 0 },
+    { "title": "THE FLYING TRUNK", "id": 1 },
+    { "title": "THE RED SHOES", "id": 2 },
+    { "title": "THUMBELISA", "id": 3 },
+    { "title": "THE SNOW QUEEN", "id": 4 },
+    { "title": "WHAT THE MOON SAW", "id": 5 },
+    { "title": "THE MARSH KING'S DAUGHTER", "id": 6 },
+    { "title": "THE TRAVELLING COMPANIONS", "id": 7 },
+    { "title": "THE MERMAID", "id": 8 },
+    { "title": "THE GIRL WHO TROD ON A LOAF", "id": 9 },
+    { "title": "THE NIGHTINGALE", "id": 10 },
+    { "title": "THE GARDEN OF PARADISE", "id": 11 },
+    { "title": "THE WIND'S TALE", "id": 12 }
+  ],
+  "id": 5,
+  "subjects": ["Fiction"]
+}

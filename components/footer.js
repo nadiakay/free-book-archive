@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="font-serif bg-accent-1 border-t border-slate-200 mt-20 h-fit-content">
+    <footer className="font-serif bg-accent-1 border-t border-slate-200 h-fit-content">
       <div className="py-12 flex flex-col lg:flex-row justify-between  justify-items-center space-y-2 lg:space-y-0 max-w-2xl mx-auto">
         <h3 className="text-lg font-bold tracking-tighter leading-tight text-center">
           Free Book Archive
