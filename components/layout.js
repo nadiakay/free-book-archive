@@ -13,7 +13,7 @@ export default function Layout({ subjects, children }) {
           <Nav subjects={subjects} />
         </Header>
         <main className="mx-2 pb-8">
-          <section className="shadow-xl bg-white max-w-4xl mx-auto mt-4 font-serif">
+          <section className="shadow-xl rounded-sm bg-white max-w-4xl mx-auto mt-4 font-serif">
             <div className="mx-4 pt-4 pb-8">{children}</div>
           </section>
         </main>

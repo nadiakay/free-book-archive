@@ -56,12 +56,12 @@ export default function Subject({ subject, books, subjects }) {
             <Head>
               <title>{subject} Books</title>
             </Head>
-            <h1 className="flex flex-row border-b border-slate-400 mb-4 text-2xl">
+            <h1 className="border-b border-slate-400 mb-4 text-2xl">
               {subject} Books
             </h1>
-            <ul className="text-lg space-y-3 mx-4">
+            <ul className="flex flex-row flex-wrap text-lg mx-4">
               {books.map((book, i) => (
-                <li key={i}>
+                <li key={i} className="mx-4  py-4 grow">
                   <BookPreview book={book} />
                 </li>
               ))}
