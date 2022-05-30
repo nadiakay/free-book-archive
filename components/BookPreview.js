@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 export default function BookPreview({ book }) {
-  console.log(book);
   return (
     <div className="shadow-sm rounded-lg p-3 w-fit mx-auto flex flex-col justify-between items-center">
       <img
