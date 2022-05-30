@@ -23,24 +23,26 @@ export default function Index({ books, subjects }) {
         <title>Free Book Archive</title>
       </Head>
       <Layout subjects={subjects}>
-        <h1 className="text-2xl border-b border-slate-400 mb-3">
+        <h1 className="font-serif text-2xl border-b border-slate-400 mb-3">
           Welcome to the Free Book Archive!
         </h1>
-        <p className="mx-4 my-4">
-          Our collection of ebooks is freely available in web accessible format
-          suited for desktop or mobile devices. All texts are public domain or
-          licensed for redistribution as noted.
-        </p>
-        <h2 className="font-bold text-xl mb-2">Browse by Subject:</h2>
-        <ul className="text-lg space-y-2 mx-4">
-          {subjects.map((subject, i) => (
-            <li key={i}>
-              <Link href={`/subject/${subject}`}>
-                {<a className="hover:underline ">{subject}</a>}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <section className="mx-4 my-4">
+          <p className="mb-4">
+            Our collection of ebooks is freely available in web accessible
+            format suited for desktop or mobile devices. All texts are public
+            domain or licensed for redistribution as noted.
+          </p>
+          <h2 className="font-bold text-xl mb-4">Browse by Subject:</h2>
+          <ul className="text-lg space-y-2 mx-4">
+            {subjects.map((subject, i) => (
+              <li key={i}>
+                <Link href={`/subject/${subject}`}>
+                  {<a className="hover:underline ">{subject}</a>}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
       </Layout>
     </>
   );

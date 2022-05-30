@@ -19,7 +19,8 @@ module.exports = {
         tight: 1.2
       },
       fontFamily: {
-        serif: ["CharisSILW", "sans-serif"]
+        serif: ["CharisSILW", "serif"],
+        sans: ["Source Sans Pro", "sans-serif"]
       },
       fontSize: {
         "5xl": "2.5rem",

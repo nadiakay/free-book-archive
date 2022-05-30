@@ -20,8 +20,8 @@ export default function About({ subjects }) {
         <title>About: Free Book Archive</title>
       </Head>
       <Layout subjects={subjects}>
-        <section className="max-w-4xl mx-auto mb-32 font-serif">
-          <h1 className="text-2xl border-b border-slate-400 mb-4">
+        <section className="max-w-4xl mx-auto mb-32 ">
+          <h1 className="text-2xl border-b font-serif border-slate-400 mb-4">
             About the Free Book Archive
           </h1>
           <article className="mx-4 space-y-3">
