@@ -44,10 +44,14 @@ export default function About({ subjects }) {
                 <a className="underline">Wikisource</a>
               </Link>{" "}
               using{" "}
-              <Link href="ws-export.wmcloud.org">
+              <Link href="https://ws-export.wmcloud.org">
                 <a className="underline">Wikisource Book Export</a>
-              </Link>
-              .
+              </Link>{" "}
+              and processed with{" "}
+              <Link href="https://github.com/nadiakay/wikisource-book-splitter">
+                <a className="underline">Wikisource Book Splitter</a>
+              </Link>{" "}
+              custom scripts.
             </p>
           </article>
         </section>
