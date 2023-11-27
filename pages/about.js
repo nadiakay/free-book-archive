@@ -38,7 +38,7 @@ export default function About({ subjects }) {
             </p>
             <p>
               All texts are in the public domain or available for use under
-              license, as indicated. Html, images, and stylesheets for books
+              license, as indicated. HTML, images, and stylesheets for books
               were exported from{" "}
               <Link href="https://wikisource.org">
                 <a className="underline">Wikisource</a>
